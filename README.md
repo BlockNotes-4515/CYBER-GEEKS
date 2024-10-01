@@ -12,6 +12,9 @@ Welcome to the official repository of **CYBER GEEKS** – a dedicated team of en
 This repository showcases our ongoing work, providing resources, documentation, and code for anyone interested in exploring the potential of IoT and robotics.
 
 ---
+<div align="center">
+   <img src="images/SIH-Team.jpg" alt="this is just sample text!">
+</div>
 
 ## 🚀 **Project Overview**
 
