@@ -116,6 +116,10 @@ Our team is made up of passionate engineers, developers, and creators, dedicated
    A skilled group of IoT specialists, robotics engineers, and software developers contributing to our innovative projects.
 
 ---
+<div align="center">
+<img src="images/champ2.jpeg">
+   </div>
+
 
 ## 🛠 **Contributing to CYBER GEEKS**
 
