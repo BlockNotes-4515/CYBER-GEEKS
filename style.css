@@ -1,0 +1,953 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: SF PRO DISPLAY;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+#main{
+    position: relative;
+    overflow: hidden;
+}
+#page{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #000;
+
+}
+#page>nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px; /* Add space between buttons */
+    padding: 0px 20px;
+    height: 8vh;
+    width: 100vw;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+}
+
+/* Responsive adjustments for navigation */
+#page>nav>button {
+    padding: 7px 20px;
+    border-radius: 50px;
+    border: none;
+    background-color: #fff;
+    width: 90%;
+    height: 80%;
+}
+/* Base button styles */
+#page > nav > button {
+    position: relative; /* Position relative for pseudo-element */
+    overflow: hidden; /* Hide overflow */
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0); /* Text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor */
+    transition: color 0.3s; /* Transition for text color */
+}
+
+/* Water ripple effect */
+#page > nav > button::before {
+    content: ''; /* Empty content */
+    position: absolute; /* Absolute positioning */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    width: 300%; /* Initial width */
+    height: 300%; /* Initial height */
+    border-radius: 50%; /* Make it a circle */
+    transform: translate(-50%, -50%) scale(0); /* Scale down initially */
+    transition: transform 0.6s, opacity 0.6s; /* Transition for scaling and opacity */
+    opacity: 0; /* Start invisible */
+}
+
+/* Button hover effect */
+#page > nav > button:hover {
+    background-color: rgb(4, 255, 0); /* Change text color on hover */
+}
+
+/* Ripple effect on hover */
+#page > nav > button:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* Scale up to full size */
+    opacity: 1; /* Make it visible */
+}
+
+#page>nav>h3 {
+    font-weight: 900;
+}
+
+/* Responsive adjustments remain the same */
+
+
+/* Video Styles */
+#page > video {
+    height: 100%;
+    width: 100%; /* Set width to 100% for better responsiveness */
+    object-fit: cover; /* Maintain the aspect ratio */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    #page > video {
+        width: 100%; /* Full width for tablets */
+        height: auto; /* Adjust height automatically to maintain aspect ratio */
+    }
+}
+
+@media (max-width: 480px) {
+    #page > video {
+        width: 100%; /* Full width for mobile devices */
+        height: auto; /* Adjust height automatically */
+    }
+}
+
+#page-bottom {
+    height: 20%;
+    width: 25%;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For small screens: mobile devices (max-width: 768px) */
+@media only screen and (max-width: 768px) {
+    #page>nav {
+        width: 90vw;
+        height: auto;
+        padding: 10px;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    #page>nav>button {
+        margin-bottom: 10px;
+        padding: 10px 20px;
+    }
+    
+    #page>video {
+        width: 100%;
+        height: auto;
+        position: relative;
+        transform: none;
+        left: 0;
+    }
+
+    #page-bottom {
+        width: 80%;
+        height: auto;
+        bottom: 2%;
+        padding: 10px;
+    }
+}
+
+/* For medium screens: tablets (max-width: 1024px) */
+@media only screen and (max-width: 1024px) {
+    #page>nav {
+        width: 70vw;
+    }
+
+    #page>video {
+        width: 70%;
+    }
+
+    #page-bottom {
+        width: 50%;
+    }
+}
+
+/* For extra small screens (max-width: 480px) */
+@media only screen and (max-width: 480px) {
+    #page>nav {
+        width: 95vw;
+        padding: 10px;
+    }
+
+    #page>nav>h3 {
+        font-size: 1.2rem;
+    }
+
+    #page>video {
+        width: 100%;
+    }
+
+    #page-bottom {
+        width: 90%;
+        bottom: 1%;
+    }
+
+    #page>nav>button {
+        font-size: 0.9rem;
+        padding: 5px 10px;
+    }
+}
+
+#page-bottom>h3{
+    color: #dadada93;
+    margin-bottom: 1vw;
+}
+#page1{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+}
+#page1>video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+#page1>h1{
+    font-size: 4vw;
+    color: #fff;
+    font-weight: 400;
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+
+#page2{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+#page2>video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+#page2>h1{
+    font-size: 4vw;
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    text-align: center;
+    color: #fff;
+    font-weight: 400;
+}
+
+
+#page3{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+}
+#page3>img{
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#page3-upper{
+    height: 25%;
+    width: 35%;
+    position: absolute;
+    z-index: 9;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#page3-upper>img{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+}
+#page3-upper-inner {
+    position: absolute;
+    bottom: 0%;
+    height: 60%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 80px;
+    color: #050505;
+}
+
+/* Heading Styles */
+#page3-upper-inner h1, /* For main heading */
+#page3-upper-inner h2, /* For subheading */
+#page3-upper-inner h3 { /* For additional headings */
+    font-size: 2.5em; /* Large font size */
+    font-weight: bold; /* Make it bold */
+    margin: 0; /* Remove default margin */
+}
+
+#page3-upper-inner p {
+    font-size: 1.2em; /* Increase paragraph font size */
+    line-height: 1.5; /* Improve readability */
+}
+
+#page3-upper-inner>h3{
+    font-weight: 800;
+}
+#page3 > button {
+    position: absolute;
+    bottom: 7%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    border: 1px solid #000;
+    font-weight: 500;
+    background-color: #fff;
+    border-radius: 50px; /* Rounded corners */
+    font-size: 1.4vw;
+    overflow: hidden; /* Hide overflow for blob effect */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover */
+    z-index: 1; /* Ensure button is above the blob */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Blob effect on hover */
+#page3 > button:hover {
+    background-color: rgb(21, 255, 0);
+    font-weight: 400;
+    transform: translateX(-50%) scale(1.05); /* Scale up on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5), 0 0 30px rgba(21, 255, 0, 0.3); /* Add glow effect */
+}
+
+/* Blob shape using pseudo-element */
+#page3 > button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%; /* Size of the blob */
+    height: 200%; /* Size of the blob */
+    border-radius: 50%; /* Make it circular */
+    transform: translate(-50%, -50%) scale(0); /* Start hidden */
+    transition: transform 0.3s; /* Smooth transition for scaling */
+    z-index: 0; /* Place behind the button text */
+}
+
+/* Show the blob on hover */
+#page3 > button:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* Scale the blob */
+}
+
+
+#page4{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+#page4>video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+#center-page4{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color: #fff;
+    font-size: 2vw;
+}
+
+#page5{
+    display: flex;
+    position: relative;
+    height: 60vh;
+    width: 100vw;
+}
+.left5{
+    position: relative;
+    height: 100%;
+    width: 50%;
+}
+.left5>h1{
+    font-size: 2.3vw;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10%;
+}
+.right5{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+    padding-left: 5vw;
+}
+.right5>h3{
+    font-size: 2vw;
+    width: 90%;
+    color: #000000d7;
+}
+.right5>button{
+    padding: 10px 20px;
+    border: none;
+    background-color: #000000;
+    color: #fff;
+    font-weight: 400;
+    border-radius: 50px;
+    font-size: 1.3vw;
+    margin-top: 1.5vw;
+}
+.right5>button:hover
+{
+    background-color: rgb(21, 255, 0);
+    color: #000;
+    font-weight: 400;
+    transform: translateX(-50%) scale(1.05); /* Scale up on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5), 0 0 30px rgba(21, 255, 0, 0.3); /* Add glow effect */
+}
+/* Blob shape using pseudo-element */
+#page5 > button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%; /* Size of the blob */
+    height: 200%; /* Size of the blob */
+    border-radius: 50%; /* Make it circular */
+    transform: translate(-50%, -50%) scale(0); /* Start hidden */
+    transition: transform 0.3s; /* Smooth transition for scaling */
+    z-index: 0; /* Place behind the button text */
+}
+
+/* Show the blob on hover */
+#page5 > button:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* Scale the blob */
+}
+.left5 {
+    display: flex;
+    flex-direction: column; /* Align children in a column */
+    align-items: center; /* Center align items horizontally */
+    justify-content: flex-start; /* Start from the top */
+    text-align: center; /* Center text */
+    padding: 20px; /* Add some padding around the content */
+}
+
+.bottom-image {
+    margin-top: auto; /* Push the image to the bottom of the container */
+    width: 50%; /* Keep the width as desired */
+    height: auto; /* Keep the aspect ratio of the image */
+}
+
+
+
+#page6{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    height: 70vh;
+    width: 100vw;
+    background-color: #f5f5f7;
+}
+#page6>h3{
+    margin-bottom: 1vw;
+    font-size: 2vw;
+}
+#page6>h1{
+    margin-bottom: 1.5vw;
+    font-size: 4vw;
+}
+#page6>p{
+    font-size: 1.2vw;
+    width: 60%;
+    font-weight: 700;
+    color: #545454c9;
+}
+
+#page7{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f5f5f7;
+}
+
+#page7>canvas{
+    position: relative;
+    max-width: 100vw;
+    max-height: 100vh;
+    z-index: 99;
+}
+#page8{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f5f5f7;
+
+}
+#page8>h1{
+    width: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5%;
+    font-size: 1.3vw;
+    font-weight: 500;
+    color: #000000;
+    z-index: 99;
+    position: absolute;
+}
+#page8>h1>span{
+    color: #000;
+}
+#page9{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f5f5f7;
+}
+#page9>h1{
+    width: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5%;
+    font-size: 1.3vw;
+    font-weight: 500;
+    color: #000000;
+    z-index: 99;
+    position: absolute;
+}
+#page9>h1>span{
+    color: #000;
+}
+#page10{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f5f5f7;
+
+}
+#page10>h1{
+    width: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5%;
+    font-size: 1.3vw;
+    font-weight: 500;
+    color: #000000;
+    z-index: 99;
+    position: absolute;
+}
+#page10>h1>span{
+    color: #000;
+}
+#page11{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f5f5f7;
+}
+#page11>h1{
+    width: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5%;
+    font-size: 1.3vw;
+    font-weight: 500;
+    color: #000000;
+    z-index: 99;
+    position: absolute;
+}
+#page11>h1>span{
+    color: #000;
+}
+#page12{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f5f5f7;
+
+}
+#page12>h1{
+    width: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5%;
+    font-size: 1.3vw;
+    font-weight: 500;
+    color: #000000;
+    z-index: 99;
+    position: absolute;
+}
+#page12>h1>span{
+    color: #000;
+}
+#page13{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f5f5f7;
+}
+#page13>h1{
+    width: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5%;
+    font-size: 1.3vw;
+    font-weight: 500;
+    color: #000000;
+    z-index: 99;
+    position: absolute;
+}
+#page13>h1>span{
+    color: #000;
+}
+
+
+#page14{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+}
+.left14{
+    height: 90%;
+    width: 45%;
+    position: relative;
+    background-image: url(https://www.apple.com/v/apple-vision-pro/a/images/overview/design/glass_top__k3b8lzqd1l2m_large.jpg);
+    background-size: cover;
+}
+.right14{
+    height: 90%;
+    width: 45%;
+    position: relative;
+    background-image: url(https://www.apple.com/v/apple-vision-pro/a/images/overview/design/glass_side__gm4agomrwl2e_large.jpg);
+    background-size: cover;
+}
+#page15{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#center-page15{
+    height: 90%;
+    width: 95%;
+    position: relative;
+    overflow: hidden;
+}
+#center-page15>video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+#page16{
+    position: relative;
+    height: 120vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#page16>h2{
+    position: absolute;
+    width: 50%;
+    color: #434343c7;
+    font-weight: 500;
+    top: 5%;
+}
+#page16>h2>span{
+    color: #000;
+}
+#page16>img{
+    width: 60%;
+    position: absolute;
+    bottom: 0%;
+}
+#page16>button{
+    position: absolute;
+    bottom: 10%;
+    padding: 10px 20px;
+    font-size: 1.5vw;
+    border-radius: 50px;
+    background-color: #ff823d;
+    color: #fff;
+    font-weight: 500;
+    border: none;
+}
+#page17{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #000;
+    color: #fff;
+}
+#page17>h4{
+    font-size: 2vw;
+    font-weight: 500;
+    margin-bottom: 2vw;
+}
+#page17>h1{
+    font-size: 5vw;
+    line-height: 1;
+    font-weight: 500;
+    margin-bottom: 3vw;
+}
+#page17>p{
+    font-size: 1.5vw;
+    font-weight: 500;
+    margin-bottom: 2vw;
+    color: #ffffff7c;
+    width: 50%;
+    text-align: center;
+}
+#page17>p>span{
+    color: #fff;
+}
+/* Button styling */
+#page17 > a > button {
+    position: relative; /* Needed for the pseudo-element */
+    padding: 10px 20px;
+    border: none;
+    background-color: #ffffff; /* Black background */
+    color: #000000; /* White text */
+    font-weight: 400;
+    border-radius: 50px; /* Rounded corners */
+    font-size: 1.3vw; /* Responsive font size */
+    margin-top: 20px; /* Space above the button */
+    cursor: pointer; /* Change cursor to pointer */
+    overflow: hidden; /* Ensure pseudo-element doesn't overflow */
+}
+
+/* Button hover effects */
+#page17 > a > button:hover {
+    background-color: rgb(21, 255, 0); /* Green background on hover */
+    color: #000000; /* Black text on hover */
+    transform: scale(1.05); /* Scale up on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5), 0 0 30px rgba(21, 255, 0, 0.3); /* Glow effect */
+}
+
+/* Blob shape using pseudo-element */
+#page17 > a > button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%; /* Size of the blob */
+    height: 200%; /* Size of the blob */
+    border-radius: 50%; /* Make it circular */
+    background-color: rgba(21, 255, 0, 0.5); /* Blob color */
+    transform: translate(-50%, -50%) scale(0); /* Start hidden */
+    transition: transform 0.3s; /* Smooth transition for scaling */
+    z-index: 0; /* Place behind the button text */
+}
+
+/* Show the blob on hover */
+#page17 > a > button:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* Scale the blob */
+}
+
+/* Ensure the button text appears above the blob */
+#page17 > a > button span {
+    position: relative; /* Position relative to stack above pseudo-element */
+    z-index: 1; /* Ensure it is above the blob */
+}
+
+
+
+#page18{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    top: 0%;
+}
+#page18>canvas{
+    position: relative;
+    max-width: 100vw;
+    max-height: 100vw;
+}
+#page19{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+    height: 30vh;
+    width: 100vw;
+    background-color: #000;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.5vw;
+}
+#page19>h5{
+    width: 35%;
+}
+#page20{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #000;
+}
+#page20>video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+#center-page20{
+    position: absolute;
+    height: 20%;
+    width: 20%;
+    bottom: 18%;
+    right: 5%;
+    color: #fff;
+}
+#center-page20>h1{
+    margin-bottom: 1.7vw;
+}
+#center-page20 button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 0; /* No rounded corners for a rectangular shape */
+    background-color: rgb(0, 208, 255); /* Semi-transparent green */
+    color: #000; /* Text color */
+    font-size: 1.2rem; /* Font size */
+    font-weight: 500; /* Font weight */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background and text color */
+}
+
+#center-page20 button:hover {
+    background-color: rgb(100, 250, 0); /* Change background color on hover */
+    color: #000000; /* Change text color on hover */
+    border-color: #000;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform: rotateX('90deg');
+}
+
+
+#page21{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #000;
+}
+#page21>#troff{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    width: 50%;
+    z-index: 9;
+}
+#page21>#tron{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    width: 50%;
+}
+#page22{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #000;
+}
+#page22>#snroff{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    width: 50%;
+    z-index: 9;
+}
+#page22>#snron{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    width: 50%;
+}
+#page23{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #000;
+}
+#page23>img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity:0
+}
+
+/*Doing Footter*/
+.apple-footer {
+    background-color: #f5f5f7; /* Light gray background */
+    color: #1d1d1f; /* Dark text color */
+    padding: 40px 20px; /* Padding for top/bottom and sides */
+    text-align: center; /* Center align text */
+    font-size: 14px; /* Font size */
+    border-top: 1px solid #e1e1e1; /* Light border on top */
+}
+
+.footer-content {
+    max-width: 1200px; /* Max width for content */
+    margin: auto; /* Center content */
+}
+
+.footer-links {
+    margin-bottom: 10px; /* Space below links */
+}
+
+.footer-links a {
+    margin: 0 15px; /* Margin between links */
+    color: #0071e3; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.footer-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.social-media {
+    margin-top: 10px; /* Space above social media links */
+}
+
+.social-media a {
+    margin: 0 10px; /* Space between social media links */
+    color: #0071e3; /* Social media link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.social-media a:hover {
+    text-decoration: underline; /* Underline on hover */
+}

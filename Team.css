@@ -1,0 +1,292 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    background-color: #040202;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: nowrap; /* Updated for scrolling */
+    padding: 2em 1em;
+    text-align: center;
+    overflow-x: scroll; /* Enable horizontal scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling */
+  }
+  
+  .column {
+    width: 100%;
+    padding: 0.5em 0;
+  }
+  
+  h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 3.5em;
+    color: #1f003b;
+  }
+  
+  .card {
+    box-shadow: 0 0 2.4em rgba(25, 0, 58, 0.1);
+    padding: 3.5em 1em;
+    border-radius: 0.6em;
+    color: #1f003b;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    background-color: #ffffff;
+    margin: 0 1em;
+  }
+  
+  .card .img-container {
+    width: 14em;
+    height: 14em;
+    background-color: #000000;
+    padding: 0.5em;
+    border-radius: 50%;
+    margin: 0 auto 2em auto;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card h3 {
+    font-weight: 800;
+  }
+  
+  .card p {
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: 0.5em 0 2em 0;
+    letter-spacing: 2px;
+  }
+  
+  .icons {
+    width: 80%;
+    min-width: 180px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .card a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.4em;
+    transition: color 0.3s ease-in-out; /* Smooth transition for hover color */
+  }
+  
+  .card:hover {
+    background: linear-gradient(#0a0a0a, #10a34d);
+    color: #ffffff;
+    transform: scale(1.05);
+  }
+  
+  .card:hover .img-container {
+    transform: scale(1.15);
+  }
+  
+  .card:hover img {
+    transform: scale(1.15);
+  }
+  
+  /* Icon Hover Animation with Different Colors */
+  .icons a:hover:nth-child(1) {
+    color: #000000; /* Twitter Blue */
+  }
+  
+  .icons a:hover:nth-child(2) {
+    color: #000000; /* LinkedIn Blue */
+  }
+  
+  .icons a:hover:nth-child(3) {
+    color: #000000; /* GitHub Dark */
+  }
+  
+  .icons a:hover:nth-child(4) {
+    color: #000000; /* Email (Red) */
+  }
+  
+  @media screen and (min-width: 768px) {
+    section {
+      padding: 1em 7em;
+    }
+  }
+  
+  @media screen and (min-width: 992px) {
+    section {
+      padding: 1em;
+    }
+    .card {
+      padding: 5em 1em;
+    }
+    .column {
+      flex: 0 0 33.33%;
+      max-width: 33.33%;
+      padding: 0 1em;
+    }
+  }
+  /*For the Header*/
+.glass-navbar {
+    background: rgba(23, 17, 200, 0.418); /* Slight white background for glass effect */
+    backdrop-filter: blur(10px); /* Blurring effect */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px 20px; /* Padding around the navbar */
+    position: fixed; /* Fix the navbar to the top */
+    top: 0; /* Align to the top */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%); /* Adjust to perfectly center it */
+    z-index: 1000; /* Ensure it stays above other elements */
+    width: 90%; /* Set a width */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center; /* Center vertically */
+}
+
+.glass-navbar .logo {
+    color: #ffffff; /* Logo text color */
+    font-size: 1.5rem; /* Font size for the logo */
+}
+
+.glass-navbar .nav-links {
+    list-style: none; /* Remove list styling */
+    display: flex; /* Use flexbox for horizontal layout */
+    gap: 20px; /* Space between links */
+}
+
+.glass-navbar .nav-links li {
+    display: inline; /* Inline for list items */
+}
+
+.glass-navbar .nav-links a {
+    text-decoration: none; /* Remove underline from links */
+    color: #ffffff; /* Link color */
+    font-size: 1rem; /* Font size for links */
+    padding: 5px 10px; /* Padding for clickable area */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.glass-navbar .nav-links a:hover {
+    background-color: rgba(0, 0, 0, 0.829); /* Light background on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+    color: #ffffff;
+}
+
+/* Add some margin to the content to prevent overlap with navbar */
+.content {
+    margin-top: 80px; /* Space for the fixed navbar */
+    padding: 20px; /* Padding for content */
+}
+.logo img {
+    max-width: 100%; /* Ensure the logo is responsive */
+    height: auto; /* Maintain aspect ratio */
+    width: 50px; /* Set a fixed width for the logo */
+    border-radius: 5px; /* Optional: rounded corners */
+}
+
+.logo img:hover{
+    color: green;
+    background-color: #080a0b;
+}
+#nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #370707;
+    /*equivalent to 16px, 1rem for top/bottom and 2rem for left/right*/
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    /* position: sticky; */
+}
+
+
+#nav i {
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+}
+/* Footer */
+footer {
+    background-color: #111;
+    width: 100%;
+    padding: 20px;
+    color: white;
+}
+.footerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.socialIcons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.socialIcons a {
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+.socialIcons a i {
+    font-size: 2em;
+    color: rgb(3, 125, 255);
+    opacity: 0.9;
+}
+/* Hover effect on social media icons */
+.socialIcons a:hover {
+    background-color: #111;
+    transition: 0.5s;
+}
+.socialIcons a:hover i {
+    color: white;
+    transition: 0.5s;
+}
+.footerNav {
+    margin: 20px 0;
+}
+.footerNav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+.footerNav ul li a {
+    color: white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+.footerNav ul li a:hover {
+    opacity: 1;
+}
+.footerBottom {
+    background-color: #080a0b;
+    padding: 20px;
+    text-align: center;
+}
+.footerBottom p {
+    color: white;
+}
+.designer {
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}

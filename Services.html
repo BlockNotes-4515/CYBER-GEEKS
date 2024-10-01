@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy / Services - CYBER GEEKS</title>
+  <link rel="icon" type="image/x-icon" href="Apple vision canvas images/sh13.png"/>
+  <!-- Other head content -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden; /* Allow vertical scroll but prevent horizontal */
+    }
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background-color: #000000; /* Black background for better particle visibility */
+    }
+    /* Centered car container */
+    .car-container {
+      position: relative;
+      text-align: center;
+      z-index: 2;
+      color: white;
+      width: 90%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .car-image {
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 20px;
+    }
+    /* Privacy Policy text style */
+    .privacy-policy {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+      margin: 0 auto;
+      margin-bottom: 50px; /* Add margin for scroll */
+    }
+    .privacy-policy h1 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    .privacy-policy p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .car-image {
+        width: 70%;
+      }
+      .privacy-policy h1 {
+        font-size: 20px;
+      }
+      .privacy-policy p {
+        font-size: 14px;
+      }
+    }
+    @media (max-width: 480px) {
+      .car-image {
+        width: 60%;
+      }
+      .privacy-policy h1 {
+        font-size: 18px;
+      }
+      .privacy-policy p {
+        font-size: 12px;
+      }
+    }
+
+    /* Neon flashing scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(45deg, #1e90ff, #32cd32);
+      border-radius: 10px;
+      animation: neon-scroll 1.5s linear infinite;
+    }
+    ::-webkit-scrollbar-track {
+      background-color: #000;
+    }
+    @keyframes neon-scroll {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+    /* Button Animation */
+    .back-home-button {
+      background-color: #eeff00;
+      color: rgb(0, 0, 0);
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .back-home-button:hover {
+      background-color: #22ff00;
+      transform: scale(1.05);
+    }
+    /* Privacy Button */
+    .privacy-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 50px;
+      height: 50px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 24px;
+      color: #000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .privacy-button:hover {
+      background-color: rgba(255, 255, 255, 1);
+      transform: scale(1.1);
+    }
+    /* Footer */
+    footer {
+            background-color: #111;
+            width: 100%;
+            padding: 20px;
+            color: white;
+        }
+        .footerContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .socialIcons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .socialIcons a {
+            text-decoration: none;
+            padding: 10px;
+            background-color: white;
+            margin: 10px;
+            border-radius: 50%;
+        }
+        .socialIcons a i {
+            font-size: 2em;
+            color: rgb(3, 125, 255);
+            opacity: 0.9;
+        }
+        /* Hover effect on social media icons */
+        .socialIcons a:hover {
+            background-color: #111;
+            transition: 0.5s;
+        }
+        .socialIcons a:hover i {
+            color: white;
+            transition: 0.5s;
+        }
+        .footerNav {
+            margin: 20px 0;
+        }
+        .footerNav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+        .footerNav ul li a {
+            color: white;
+            margin: 20px;
+            text-decoration: none;
+            font-size: 1.3em;
+            opacity: 0.7;
+            transition: 0.5s;
+        }
+        .footerNav ul li a:hover {
+            opacity: 1;
+        }
+        .footerBottom {
+            background-color: #080a0b;
+            padding: 20px;
+            text-align: center;
+        }
+        .footerBottom p {
+            color: white;
+        }
+        .designer {
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 400;
+            margin: 0px 5px;
+        }
+        header {
+    height: 6vh;
+    background-color: #000000;
+    font-family: Samarkan;
+    font-size: 3.5vh;
+    text-shadow: 0 0 55px #00aeff, 0 0 75px #00a9f8, 2px 0px 6px rgba(105, 36, 143, 0);
+
+}
+/*For the Header*/
+.glass-navbar {
+    background: rgba(255, 255, 255, 0.1); /* Slight white background for glass effect */
+    backdrop-filter: blur(10px); /* Blurring effect */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px 20px; /* Padding around the navbar */
+    position: fixed; /* Fix the navbar to the top */
+    top: 0; /* Align to the top */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%); /* Adjust to perfectly center it */
+    z-index: 1000; /* Ensure it stays above other elements */
+    width: 90%; /* Set a width */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center; /* Center vertically */
+}
+
+.glass-navbar .logo {
+    color: #ffffff; /* Logo text color */
+    font-size: 1.5rem; /* Font size for the logo */
+}
+
+.glass-navbar .nav-links {
+    list-style: none; /* Remove list styling */
+    display: flex; /* Use flexbox for horizontal layout */
+    gap: 20px; /* Space between links */
+}
+
+.glass-navbar .nav-links li {
+    display: inline; /* Inline for list items */
+}
+
+.glass-navbar .nav-links a {
+    text-decoration: none; /* Remove underline from links */
+    color: #ffffff; /* Link color */
+    font-size: 1rem; /* Font size for links */
+    padding: 5px 10px; /* Padding for clickable area */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.glass-navbar .nav-links a:hover {
+    background-color: rgb(255, 255, 255); /* Light background on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+    color: #080a0b;
+}
+
+/* Add some margin to the content to prevent overlap with navbar */
+.content {
+    margin-top: 80px; /* Space for the fixed navbar */
+    padding: 20px; /* Padding for content */
+}
+.logo img {
+    max-width: 100%; /* Ensure the logo is responsive */
+    height: auto; /* Maintain aspect ratio */
+    width: 50px; /* Set a fixed width for the logo */
+    border-radius: 5px; /* Optional: rounded corners */
+}
+
+.logo img:hover{
+    color: green;
+    background-color: #080a0b;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Glassmorphism Menu Bar -->
+<nav class="glass-navbar">
+  <div class="logo"><a href="index.html"><img src="Apple vision canvas images/Team_Logo-no bg.png"></a></div>
+  <ul class="nav-links">
+      <li><a href="index.html">🏠Home</a></li>
+      <li><a href="Projects.html">📜Project</a></li>
+      <li><a href="Mission.html">👨‍🚀Mission</a></li>
+      <li><a href="Team.html">🥊Our Team</a></li>
+      <li><a href="Contact.html">📞Contact</a></li>
+      <li><a href="Services.html">🏃Services</a></li>
+      <li><a href="About.html">🧐About</a></li>
+      <li><a href="Hiring.html">🕵️‍♂️Hiring</a></li>
+      <li><a href="Gallery.html">🖼️Gallery</a></li>
+  </ul>
+</nav>
+<br><br><br><br>
+
+
+
+
+
+
+
+  <header>
+    <marquee scrollamount="11">
+     <font color="yellow">Make Your Way Through India's Timeless Legacy! You have to Prove Yourself Not other's , THINK-->TRY-->FIND-->SOLVE-->CODE-->INNOVATE-->SUCCESS!</font> 
+    </marquee>
+  </header>        
+  <hr>
+   <!-- Privacy Reasons! Read It Carefully! -->
+   <a href="index.html" class="privacy-button">
+    &#128274; <!-- Unicode for lock icon -->
+  </a>
+
+  <div id="particles-js"></div>
+
+  <!-- Car container with privacy policy -->
+  <div class="car-container">
+    <img src="Apple vision canvas images/Team_Logo-no bg.png" alt="Car" class="car-image">
+    <div class="privacy-policy" align="center">
+      <h1>Privacy Policy 📜</h1>
+      <p><h1>To All The Legends 😊</h1></p>
+      <p>Welcome to Cyber Geeks! This website is a special place where we share our passion for technology and cybersecurity. Here’s how we protect your privacy:</p>
+      <hr>
+      <h2>💖 Keep It Just Between Us</h2>
+      <p>This platform is meant to be a safe space. Please don’t share this website with anyone else. It's designed for you and your understanding of our services!</p>
+      <hr>
+      <h2>👀 GPL Licensed, No Screenshots</h2>
+      <p>For your security, please refrain from taking screenshots or sharing content from this site. We value your privacy and the integrity of our information.</p>
+      <hr>
+      <h2>🌐 About Us - Cyber Geeks</h2>
+      <p>We are a passionate team of tech enthusiasts committed to providing top-notch cybersecurity solutions. Our team specializes in:</p>
+      <ul style="list-style-type: none; padding: 0;">
+        <li>🔒 Cybersecurity Consulting</li>
+        <li>💻 Network Security Solutions</li>
+        <li>📊 Data Protection Strategies</li>
+        <li>🛡️ Threat Detection and Response</li>
+        <li>🌍 Security Awareness Training</li>
+      </ul>
+      <hr>
+      <h2>🔒 Your Privacy</h2>
+      <p>We respect your privacy. We do not collect personal information or track users on this website. Our mission is to provide a safe and informative experience.</p>
+      <hr>
+      <h2>🚀 Our Services</h2>
+      <p>Cyber Geeks offers various services tailored to meet your cybersecurity needs:</p>
+      <ul style="list-style-type: none; padding: 0;">
+        <li>🕵️‍♂️ Penetration Testing</li>
+        <li>🔍 Vulnerability Assessments</li>
+        <li>📜 Compliance Audits</li>
+        <li>🤖 Security Software Development</li>
+        <li>👩‍🏫 Workshops and Training Sessions</li>
+      </ul>
+      <hr>
+      <h2>🤫 Keep it a Secret</h2>
+      <p>Let’s keep this little secret between us, okay? We hope you enjoy exploring the resources we provide here! 😊</p>
+      <p><b><i><h1>-Made With ❤️ by Cyber Geeks</h1></i></b></p>
+      <button class="back-home-button" onclick="location.href='index.html';">Firse Dekhne Ke Liye</button>
+    </div>
+  </div>
+  <footer>
+    <div class="footerContainer">
+        <div class="socialIcons">
+            <a href="https://github.com/BlockNotes-4515"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/dhruv-dhayal-9568b7262/"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/Suyash-4"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/suyash-48a954218/"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <div class="footerNav">
+            <ul>
+                <li><a href="https://github.com/BlockNotes-4515">Dh-Github</a></li>
+                <li><a href="https://www.linkedin.com/in/dhruv-dhayal-9568b7262/">Dh-Linkdin</a></li>
+                <li><a href="https://github.com/iprattham/">Ph-Github</a></li>
+                <li><a href="https://www.linkedin.com/in/prattham-s-23b60b207/">Ph-Linkdin</a></li>
+            </ul>
+        </div>
+        <div class="footerBottom">
+            <p class="designer">© 2024 by CYBERGEEKS CO. Productions.ltd</p>
+        </div>
+    </div>
+</footer>
+
+  <!-- Include the particles.js library -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <!-- Configuration for particles.js -->
+  <script>
+    particlesJS('particles-js', {
+      "particles": {
+        "number": {
+          "value": 80,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": ["#ff4500", "#ff0000", "#1e90ff", "#32cd32", "#ffff00"]
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          }
+        },
+        "opacity": {
+          "value": 1,
+          "random": false
+        },
+        "size": {
+          "value": 5, // Reduced particle size
+          "random": true
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 6,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "grab"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 200,
+            "line_linked": {
+              "opacity": 1
+            }
+          },
+          "bubble": {
+            "distance": 400,
+            "size": 40,
+            "duration": 2,
+            "opacity": 8,
+            "speed": 3
+          },
+          "repulse": {
+            "distance": 200,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 4
+          },
+          "remove": {
+            "particles_nb": 2
+          }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🗽 Upcoming Missions</title>
+    <link rel="icon" type="image/x-icon" href="Apple vision canvas images//Team_Logo-no bg.png"/>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-y: auto; /* Allow vertical scrolling */
+            font-family: Arial, sans-serif;
+            background-color: black; /* Set black background */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure the body takes full height */
+        }
+        /* Privacy Button */
+        .privacy-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            color: #000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .privacy-button:hover {
+            background-color: rgba(255, 255, 255, 1);
+            transform: scale(1.1);
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1; /* Place behind content */
+        }
+        .content {
+            position: relative;
+            z-index: 2; /* Place in front of particles */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            flex-grow: 1; /* Allow content to take available space */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+        }
+        .video-card {
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
+            width: 80%; /* Set width of card */
+            max-width: 800px; /* Max width */
+            margin-bottom: 20px; /* Space below card */
+            padding: 20px; /* Padding inside card */
+            text-align: center; /* Center text in card */
+        }
+        .video-container {
+            width: 100%; /* Full width of the card */
+            border-radius: 10px; /* Match card corners */
+            overflow: hidden; /* Hide overflow */
+        }
+        video {
+            width: 100%; /* Responsive video */
+            height: auto; /* Maintain aspect ratio */
+        }
+        .description {
+            margin-top: 20px; /* Space above description */
+            color: #ffffff;
+            font-size: 1.2em; /* Font size for description */
+        }
+        /* Date/Time Box Style */
+        .datetime-box {
+            margin-top: 20px; /* Space above datetime box */
+            background-color: white; /* White background */
+            color: black; /* Black text */
+            padding: 10px; /* Padding inside box */
+            border-radius: 5px; /* Rounded corners */
+            display: flex; /* Flexbox layout */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            font-size: 1.2em; /* Font size for datetime */
+        }
+        .datetime-box div {
+            margin: 0 5px; /* Space between date, month, year, and seconds */
+        }
+        /* Footer */
+        footer {
+            background-color: #111;
+            width: 100%;
+            padding: 20px;
+            color: white;
+        }
+        .footerContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .socialIcons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .socialIcons a {
+            text-decoration: none;
+            padding: 10px;
+            background-color: white;
+            margin: 10px;
+            border-radius: 50%;
+        }
+        .socialIcons a i {
+            font-size: 2em;
+            color: rgb(3, 125, 255);
+            opacity: 0.9;
+        }
+        /* Hover effect on social media icons */
+        .socialIcons a:hover {
+            background-color: #111;
+            transition: 0.5s;
+        }
+        .socialIcons a:hover i {
+            color: white;
+            transition: 0.5s;
+        }
+        .footerNav {
+            margin: 20px 0;
+        }
+        .footerNav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+        .footerNav ul li a {
+            color: white;
+            margin: 20px;
+            text-decoration: none;
+            font-size: 1.3em;
+            opacity: 0.7;
+            transition: 0.5s;
+        }
+        .footerNav ul li a:hover {
+            opacity: 1;
+        }
+        .footerBottom {
+            background-color: #080a0b;
+            padding: 20px;
+            text-align: center;
+        }
+        .footerBottom p {
+            color: white;
+        }
+        .designer {
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 400;
+            margin: 0px 5px;
+        }
+        header {
+    height: 6vh;
+    background-color: #000000;
+    font-family: Samarkan;
+    font-size: 3.5vh;
+    text-shadow: 0 0 55px #00aeff, 0 0 75px #00a9f8, 2px 0px 6px rgba(105, 36, 143, 0);
+
+}
+
+#main {
+    height: 100vh;
+    width: 100vw;
+}
+
+#nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #370707;
+    /*equivalent to 16px, 1rem for top/bottom and 2rem for left/right*/
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    /* position: sticky; */
+}
+
+
+#nav i {
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+#full {
+    display: none;
+    height: 100%;
+    width: 20%;
+    position: absolute;
+    z-index: 3;
+    background-color: rgba(28, 25, 25, 0.87);
+    top: 0;
+    right: -40%;
+    backdrop-filter: blur(5px);
+    padding: 10rem 1rem;
+    box-shadow: 0 0 10px 5px rgba(65, 22, 2, 0.327);
+}
+
+#full h4{
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+#full h4 a{
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: inherit;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+#full i {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    background-color: rgba(255, 255, 255, 0.512);
+    border-radius: 50%;
+    font-weight: 500;
+    padding: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    #full h4{
+        font-size: 20px;
+        margin-bottom: 3rem;
+
+    }
+}
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body> 
+    <header>
+        <marquee scrollamount="11">
+         <font color="yellow">Make Your Way Through India's Timeless Legacy! You have to Prove Yourself Not other's , THINK-->TRY-->FIND-->SOLVE-->CODE-->INNOVATE-->SUCCESS!</font> 
+        </marquee>
+      </header>
+
+    <div id="main">
+        <div id="nav" style="display: flex; justify-content: center; align-items: center; position: relative; height: 100px;">
+            <img src="Apple vision canvas images/Team_Logo-no bg.png" alt="logo" style="width: 80px; height: 80px;">
+            <h2 style="padding-left: 3.5rem;"></h2>
+            <i id="menuicon" class="ri-menu-3-line" style="position: absolute; right: 10px;"></i>
+        </div>        
+
+
+    <div id="particles-js"></div>
+    <div class="content">
+        <div class="video-card">
+            <div class="video-container">
+                <center><h1><b><font color="white">OUR MISSION TO SHOW SPYBOT VER.1</font></b></h1></center>
+                <video controls>
+                    <source src="Videos/Build Your First Raspberry Pi Robot Car.mp4" type="video/mp4"> <!-- Replace with your video path -->
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="description">
+                <h2>We Fight In Matrix / TechnoSapiens</h2>
+                <p>Where we Show Case many Different Projects and now we are aiming to launch a model in '2025 and have some proper planning to exhibit in IIT Delhi!</p>
+            </div>
+            <!-- Current Date/Time Box -->
+            <div class="datetime-box" id="datetime-box">
+                <div id="date">Date</div> | 
+                <div id="month">Month</div> | 
+                <div id="year">Year</div> | 
+                <div id="seconds">Seconds</div>
+            </div>
+            <!-- Custom Date Box -->
+            <div class="datetime-box" id="custom-date-box">
+                <div>Project Show Date (VER.1): <span id="project-show-date">05/10/2025</span></div> <!-- Set your project date here -->
+            </div>
+        </div>
+    </div>
+    <!-- Privacy Reasons! Read It Carefully! -->
+    <a href="Services.html" class="privacy-button">
+        &#128274; <!-- Unicode for lock icon -->
+    </a>
+    <footer>
+        <div class="footerContainer">
+            <div class="socialIcons">
+                <a href="https://github.com/BlockNotes-4515"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/dhruv-dhayal-9568b7262/"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/Suyash-4"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/suyash-48a954218/"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <div class="footerNav">
+                <ul>
+                    <li><a href="https://github.com/BlockNotes-4515">Dh-Github</a></li>
+                    <li><a href="https://www.linkedin.com/in/dhruv-dhayal-9568b7262/">Dh-Linkdin</a></li>
+                    <li><a href="https://github.com/iprattham/">Ph-Github</a></li>
+                    <li><a href="https://www.linkedin.com/in/prattham-s-23b60b207/">Ph-Linkdin</a></li>
+                </ul>
+            </div>
+            <div class="footerBottom">
+                <p class="designer">© 2024 by CYBERGEEKS CO. Productions.ltd</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Date and time functionality
+        function updateDateTime() {
+            const now = new Date();
+            document.getElementById('date').innerText = now.getDate();
+            document.getElementById('month').innerText = now.getMonth() + 1; // Months are 0-based
+            document.getElementById('year').innerText = now.getFullYear();
+            document.getElementById('seconds').innerText = now.getSeconds();
+        }
+        setInterval(updateDateTime, 1000);
+        updateDateTime(); // Initial call
+        // Particles.js configuration
+        particlesJS.load('particles-js', 'particles.json', function() {
+            console.log('callback - particles.js config loaded');
+        });
+    </script>
+</body>
+</html>
